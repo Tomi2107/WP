@@ -1,15 +1,9 @@
-
-<html>
-  <a href="../view/listaMensaje.php">Lista de mensajes</a>
-  <br>
-  <p><a href="../view/webinterior.html">Inicio</a></p> 
-  <br>
-</html>
 <?php 
+
     $nombre = $_POST['firstName'];
     $mail = $_POST['email'];
     $tema = $_POST['tema'];
-    $mensaje = $_POST['mensaje'];
+    $mensaje = $_POST['comentario'];
     
     //Este paso es necesario porque trabajamos con POO
     //Creamos un objeto Pedido para luego guardarlo en la DB
@@ -30,3 +24,10 @@
 
   
 ?>
+
+<html>
+  <a href="../view/listaMensaje.php">Lista de mensajes</a>
+  <br>
+  <p><a href="../view/webinterior.html">Inicio</a></p> 
+  <br>
+</html>

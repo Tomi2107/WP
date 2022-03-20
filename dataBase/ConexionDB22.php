@@ -1,13 +1,15 @@
-<?php 
+<?php
 
-class ConexionDB {
-    private $host;
-    private $user;
-    private $password;
-    private $databaseName;
+class ConexionDB
+{
+    private $host ="localhost";
+    private $user ="id18460223_latelier";
+    private $password ="Ll12345_Ll1234";
+    private $databaseName ="id18460223_tut";
     private $conexion;
-
-    function __construct($host,$user,$password,$databaseName) {
+    
+    public function __construct($host, $user, $password, $databaseName)
+    {
         $this->host=$host;
         $this->user=$user;
         $this->password=$password;
@@ -18,17 +20,19 @@ class ConexionDB {
      * Conecta con la base de datos,
      * matienen la conexión en el atributo $conexion
      */
-    public function conectar() {
-        $this->conexion = new mysqli($this->host,$this->user,$this->password,$this->databaseName);
-        if($this->conexion->connect_errno) {
+    
+    public function conectar()
+    {
+        $this->conexion = new mysqli($this->host, $this->user, $this->password, $this->databaseName);
+        if ($this->conexion->connect_errno) {
             die("Error de conexión: (" . $this->conn->connect_error . ")" . $this->conn->connect_errno);
         }
+       
+    
     }
-
     public function cerrar() {
         $this->conexion->close();
     }
-
     /**
      * Ejecuta la query recibida con el 
      * parámetro $sql.

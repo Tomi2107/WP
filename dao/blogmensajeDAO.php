@@ -4,10 +4,11 @@ class blogmensajeDAO
     public function guardarMensaje($mensajes)
     {
         require_once("../dataBase/ConexionDB.php");
-        $conexionDB = new ConexionDB("localhost", "id18460223_tut", "Ll12345_Ll1234", "id18460223_latelier");
+        $conexionDB = new ConexionDB("localhost", "id18460223_latelier", "Ll12345_Ll1234", "id18460223_tut");
         $conexionDB->conectar();
     
-        $sql = "INSERT INTO `blogmensajes`(`idcomentario`, `nombre`, `email`, `Comentario`, `tema`) 
+        $sql = "INSERT INTO blogmensajes
+        (`idcomentario`, `nombre`, `email`, `comentario`, `tema`) 
         VALUES (
         '{$mensajes->getIdcomentario()}',
         '{$mensajes->getNombre()}',
@@ -23,10 +24,10 @@ class blogmensajeDAO
     public function listarMensajes()
     {
         require_once("../dataBase/ConexionDB.php");
-        $conexionDB = new ConexionDB("localhost", "id18460223_tut", "Ll12345_Ll1234", "id18460223_latelier");
+        $conexionDB = new ConexionDB("localhost", "id18460223_latelier", "Ll12345_Ll1234", "id18460223_tut");
         $conexionDB->conectar();
 
-        $sql = "SELECT * FROM `blogmensajes`";
+        $sql = "SELECT * FROM blogmensajes";
         $result = $conexionDB->ejecutar($sql);
 
         while ($mensajes = $result->fetch_assoc()) {
@@ -49,7 +50,7 @@ class blogmensajeDAO
         public function Comentario()
     {
         require_once("../dataBase/ConexionDB.php");
-        $conexionDB = new ConexionDB("localhost", "id18460223_tut", "Ll12345_Ll1234", "id18460223_latelier");
+        $conexionDB = new ConexionDB("localhost", "id18460223_latelier", "Ll12345_Ll1234", "id18460223_tut");
         $conexionDB->conectar();
 
         $sql = "SELECT * FROM `blogmensaje` * ORDER BY nombre";

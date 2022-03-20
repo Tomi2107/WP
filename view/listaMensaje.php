@@ -45,7 +45,7 @@
             <td><?php echo $listamensaje[$i]['nombre']; ?></td>
             <td><?php echo $listamensaje[$i]['email']; ?></td>
             <td><?php echo $listamensaje[$i]['tema']; ?></td>
-            <td><?php echo $listamensaje[$i]['Comentario']; ?></td>
+            <td><?php echo $listamensaje[$i]['mensaje']; ?></td>
           </tr>
           
           <?php   

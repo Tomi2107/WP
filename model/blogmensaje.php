@@ -4,18 +4,18 @@ class blogmensaje {
     private $nombre;
     private $mail;
     private $tema;
-    private $comentario;
+    private $mensaje;
    
-    function __construct($nombre, $mail, $tema, $comentario) {
+    function __construct($nombre, $mail, $tema, $mensaje) {
         $this->nombre=$nombre;
         $this->email=$mail;
         $this->tema=$tema;
-        $this->comentario=$comentario;
+        $this->comentario=$mensaje;
         }
     
 
     /**
-     * Get the value of idPedido
+     * Get the value of idComentario
      */ 
     public function getIdcomentario()
     {
@@ -23,7 +23,7 @@ class blogmensaje {
     }
 
     /**
-     * Set the value of idPedido
+     * Set the value of idComentario
      *
      * @return  self
      */ 
@@ -76,7 +76,7 @@ class blogmensaje {
     }
 
     /**
-     * Get the value of lugarEntrega
+     * Get the value of Tema
      */ 
     public function getTema()
     {
@@ -84,7 +84,7 @@ class blogmensaje {
     }
 
     /**
-     * Set the value of lugarEntrega
+     * Set the value of Tema
      *
      * @return  self
      */ 
@@ -97,7 +97,7 @@ class blogmensaje {
 
 
     /**
-     * Get the value of idPedido
+     * Get the value of idComentario
      */ 
     public function getComentario()
     {
@@ -109,9 +109,9 @@ class blogmensaje {
      *
      * @return  self
      */ 
-    public function setComentario($comentario)
+    public function setComentario($mensaje)
     {
-        $this->comentario = $comentario;
+        $this->comentario = $mensaje;
 
         return $this;
     }
