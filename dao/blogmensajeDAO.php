@@ -8,9 +8,8 @@ class blogmensajeDAO
         $conexionDB->conectar();
     
         $sql = "INSERT INTO blogmensajes
-        (`idcomentario`, `nombre`, `email`, `comentario`, `tema`) 
+        ( `nombre`, `mail`, `comentario`, `tema`) 
         VALUES (
-        '{$mensajes->getIdcomentario()}',
         '{$mensajes->getNombre()}',
         '{$mensajes->getMail()}',
         '{$mensajes->getComentario()}',
