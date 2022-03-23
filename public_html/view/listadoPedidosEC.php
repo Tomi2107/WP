@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>BlogMensajes</title>
+  <title>Listado de Pedidos Trabajado en Clases</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,53 +16,54 @@
   <div class="container">
     <div class="py-4 text-center">
       <img class="d-block mx-auto mb-4" src="./images/logo.jpg" alt="Logo caba" width="72" height="72">
-      <h2>Mensaje</h2>
-      <p class="lead">Listado de Mensajes</p>
+      <h2>Pedidos</h2>
+      <p class="lead">Lisatdo de Pedidos pendientes</p>
     </div>
 
     <table class="table table-hover table-sm">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#ID</th>
+          <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Usuario</th>
           <th scope="col">e-mail</th>
-          <th scope="col">tema</th>
-          <th scope="col">mensaje</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Localidad</th>
+          <th scope="col">Provincia</th>
+          <th scope="col">Código Postal</th>
         </tr>
       </thead>
       <tbody>
+        <?php 
+        require_once("../dao/PedidoDAO.php");
+        $pedidoDAO = new PedidoDAO();
+        $listaPedidos = $pedidoDAO->listarPedidosEC();
 
-        <?php
-        require_once("../dao/blogmensajeDAO.php");
-        $blogmensajeDAO = new BlogmensajeDAO();
-        $listamensaje = $blogmensajeDAO->listarMensajes();
-
-        for ($i = 0; $i < count($listamensaje); $i++) {
-        
-         ?>     
+        for ($i=0; $i < count($listaPedidos); $i++) { 
+        ?>
           <tr>
-            <td><?php echo $listamensaje[$i]['idcomentario']; ?></td>
-            <td><?php echo $listamensaje[$i]['nombre']; ?></td>
-            <td><?php echo $listamensaje[$i]['mail']; ?></td>
-            <td><?php echo $listamensaje[$i]['tema']; ?></td>
-            <td><?php echo $listamensaje[$i]['comentario']; ?></td>
-          </tr>
-          
-          <?php   
-        } 
+            <td><?php echo $listaPedidos[$i]["idpedido"]?></td>
+            <td><?php echo $listaPedidos[$i]["apellido"] ?></td>
+            <td><?php echo $listaPedidos[$i]["nombre"] ?></td>
+            <td><?php echo $listaPedidos[$i]["usuario"] ?></td>
+            <td><?php echo $listaPedidos[$i]["mail"] ?></td>
+            <td><?php echo $listaPedidos[$i]["lugarentrega"] ?></td>
+            <td><?php echo $listaPedidos[$i]['localidad']; ?></td>
+            <td><?php echo $listaPedidos[$i]['provincia']; ?></td>
+            <td><?php echo $listaPedidos[$i]['codpostal']; ?></td>
+          </tr>  
+
+        <?php  
+        }
         
-        ?>          
-          
+        ?>
 
       </tbody>
+
     </table>
-    
 
   </div>
-
-<br>
-<br>
-<p><a href="webinterior.html">Inicio</a></p>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -71,4 +72,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
- </html> 
+</html>

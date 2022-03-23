@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-family: 'PT Serif', serif;
+}
+
+p {
+    margin-top: 15px;
+}
+
+hr {
+    background-color: rgb(203, 223, 221);
+    height: 10px;
+    margin-top: -5px;
+    margin-bottom: -1px;
+}
+
+#header {
+    margin: 0;
+    width: 500px;
+    position: fixed;
+    z-index: 2;
+    text-align: right;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav li a {
+    background-color: rgb(167, 47, 151);
+    color: rgb(132, 230, 197);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav li a:hover {
+    background-color: rgb(102, 81, 218);
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover>ul {
+    display: block;
+}
+
+.nav>li {
+    float: left;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+.nav li ul li ul {
+    right: -140px;
+    top: 0;
+}
+
+.images {
+    z-index: 3;
+    position: absolute;
+    margin: 0;
+}
+
+.texto {
+    z-index: 1;
+    position: relative;
+    margin: 30px 20px 20px 20px;
+    text-align: justify;
+}

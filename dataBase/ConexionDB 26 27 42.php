@@ -20,14 +20,16 @@ class ConexionDB
      * Conecta con la base de datos,
      * matienen la conexión en el atributo $conexion
      */
-   
-    public function conectar() {
-        $this->conexion = new mysqli ($this->host,$this->user,$this->password,$this->databaseName);
-        if($this->conexion->connect_errno) {
-            die("Error de conexión: (" . $this->conexion->connect_error . ")" . $this->conexion->connect_errno);
+    
+    public function conectar()
+    {
+        $this->conexion = mysqli_connect($this->host, $this->user, $this->password, $this->databaseName);
+        if ($this->conexion->connect_errno) {
+            die("Error de conexión: (" . $this->conn->connect_error . ")" . $this->conn->connect_errno);
         }
+       
+    
     }
-
     public function cerrar() {
         $this->conexion->close();
     }

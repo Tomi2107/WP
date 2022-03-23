@@ -14,7 +14,7 @@ class UsuarioDAO {
 
 
 
-    public function validarUsuarioYPass($mail, $clave) {
+    public function validarUsuarioYPass($usuario, $clave) {
 
         require_once("../dataBase/ConexionDB.php");
 
@@ -26,7 +26,7 @@ class UsuarioDAO {
 
     
 
-        $sql = "SELECT * FROM usuarios WHERE mail = '$mail' AND clave = '$clave'";
+        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND clave = '$clave'";
 
         $conexionDB->ejecutar($sql);
 
@@ -38,7 +38,7 @@ class UsuarioDAO {
 
 
 
-    public function validarUsuario($mail) {
+    public function validarUsuario($usuario) {
 
         require_once("../dataBase/ConexionDB.php");
 
@@ -50,7 +50,7 @@ class UsuarioDAO {
 
     
 
-        $sql = "SELECT * FROM usuarios WHERE mail = $mail";
+        $sql = "SELECT * FROM usuarios WHERE usuario = $usuario";
 
         $conexionDB->ejecutar($sql);
 
@@ -62,7 +62,7 @@ class UsuarioDAO {
 
 
 
-    public function guardarUsuario($mail) {
+    public function guardarUsuario($usuario) {
 
         require_once("../dataBase/ConexionDB.php");
 
@@ -72,13 +72,13 @@ class UsuarioDAO {
 
 
 
-        $sql = "INSERT INTO `usuarios`(`mail`, `clave`, `nombreyapellido`) 
+        $sql = "INSERT INTO `usuarios`(`usuario`, `clave`, `nombreyapellido`) 
 
         VALUES (
 
-            '{$mail->getMail()}', 
+            '{$usuario->getUsuario()}', 
 
-            '{$mail->getClave()}', 
+            '{$usuario->getClave()}', 
 
             '')";
 
