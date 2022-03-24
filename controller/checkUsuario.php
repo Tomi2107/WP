@@ -2,7 +2,7 @@
 
     
 
-    $usuario = $_POST["user"];
+    $mail = $_POST["user"];
 
     $clave = $_POST["pass"];
 
@@ -10,7 +10,7 @@
 
     require_once("../model/Usuario.php");
 
-    $usuario = new Usuario($usuario, $clave, "");
+    $mail = new Usuario($mail, $clave, "");
 
 
 
@@ -18,7 +18,7 @@
 
     $usuarioDAO = new UsuarioDAO();
 
-    $guardoOk = $usuarioDAO->guardarUsuario($usuario);
+    $guardoOk = $usuarioDAO->guardarUsuario($mail);
 
 
 

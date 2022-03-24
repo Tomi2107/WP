@@ -78,7 +78,7 @@ class UsuarioDAO {
 
             '{$mail->getMail()}', 
 
-            '{$mail->getMail()}', 
+            '{$mail->getClave()}', 
 
             '')";
 
