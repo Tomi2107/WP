@@ -17,7 +17,7 @@
     <div class="py-4 text-center">
       <img class="d-block mx-auto mb-4" src="./images/logo.jpg" alt="Logo caba" width="72" height="72">
       <h2>Pedidos</h2>
-      <p class="lead">Lisatdo de Pedidos pendientes</p>
+      <p class="lead">Listado de Pedidos pendientes</p>
     </div>
 
     <table class="table table-hover table-sm">
@@ -60,7 +60,9 @@
 
 
   </div>
-
+  <br>
+<p><a href="webinterior.html">Inicio</a></p>
+<br>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

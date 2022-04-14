@@ -9,6 +9,29 @@ body {
     font-family: 'PT Serif', serif;
 }
 
+@media(min-width:768px) {
+    .nav li:hover>ul {
+        display: block;
+    }
+    .nav>li {
+        float: left;
+    }
+    .nav li ul li {
+        position: relative;
+    }
+    .nav li ul li ul {
+        right: -140px;
+        top: 0;
+    }
+    .images {
+        z-index: 2;
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        height: 36px;
+    }
+}
+
 p {
     margin-top: 15px;
 }
